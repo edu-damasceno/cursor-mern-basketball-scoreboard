@@ -11,7 +11,9 @@ const GameSchema = new mongoose.Schema({
   overtime: { type: Number, default: 0 },
   timeRemaining: { type: Number, default: 720 },
   possessionTime: { type: Number, default: 24 },
-  possessionTeam: { type: String, default: 'home' }
+  possessionTeam: { type: String, default: 'home' },
+  homeTimeouts: { type: Number, default: 7 }, // NBA teams start with 7 timeouts per game
+  awayTimeouts: { type: Number, default: 7 },
 });
 
 module.exports = mongoose.model('Game', GameSchema);

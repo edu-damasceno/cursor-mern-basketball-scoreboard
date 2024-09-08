@@ -1,31 +1,34 @@
-  version: 0.2
+   version: 0.2
 
-  phases:
-    install:
-      runtime-versions:
-        nodejs: 20
-      commands:
-        - echo Installing dependencies...
-        - npm install
-        - cd server
-        - npm install
-        - cd ../client
-        - npm install
+   phases:
+     install:
+       runtime-versions:
+         nodejs: 20
+       commands:
+         - echo Installing dependencies...
+         - npm install  # Install root dependencies
+         - cd server
+         - npm install  # Install server dependencies
+         - cd ../client
+         - npm install  # Install client dependencies
 
-  build:
-    commands:
-      - echo Building the client...
-      - cd ../client
-      - npm run build
-      - ls -la
+     build:
+       commands:
+         - echo "Building the client..."
+         - cd ../client
+         - npm run build  # Build the React app
+         - echo "Contents of the client directory after build:"
+         - ls -la  # List files in the client directory to check for build output
+         - echo "Contents of the build directory:"
+         - ls -la build  # List files in the build directory
 
-  post_build:
-    commands:
-      - echo Starting the server...
-      - cd ../
-      - npm start  # Start the Node.js server
+     post_build:
+       commands:
+         - echo Starting the server...
+         - cd ../
+         - npm start  # Start the Node.js server
 
    artifacts:
      files:
        - '**/*'
-     base-directory: client/build
+     base-directory: client/build  # Ensure this directory exists after build

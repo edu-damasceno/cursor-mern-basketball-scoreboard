@@ -16,9 +16,6 @@ phases:
 
   build:
     commands:
-      - echo Building the server...
-      - cd ../server
-      - npm run build
       - echo Building the client...
       - cd ../client
       - npm run build
@@ -27,9 +24,9 @@ phases:
     commands:
       - echo Starting server and client concurrently...
       - cd ../
-      - concurrently "npm run server" "npm run client"
+      - npm start
 
 artifacts:
   files:
-    - '**/*'  # Include all files for deployment
-  base-directory: client/build  # Adjust this if your build output is in a different location
+    - '**/*'
+  base-directory: client/build

@@ -1,11 +1,27 @@
 version: 0.2
+
 phases:
   install:
+    runtime-versions:
+      nodejs: 14  # Specify the Node.js version you are using
     commands:
+      - echo Installing server dependencies...
+      - cd server
       - npm install
+      - echo Installing client dependencies...
+      - cd ../client
+      - npm install
+
   build:
     commands:
-      - npm run build
+      - echo Building the server...
+      - cd ../server
+      - npm run build  # If you have a build script for the server
+      - echo Building the client...
+      - cd ../client
+      - npm run build  # If you have a build script for the client
+
 artifacts:
   files:
-    - '**/*'
+    - '**/*'  # Include all files for deployment
+  base-directory: client/build  # Adjust this if your build output is in a different location

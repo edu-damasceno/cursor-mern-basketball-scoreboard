@@ -14,11 +14,6 @@ phases:
       - cd ../client
       - npm install
 
-  pre_build:
-    commands:
-      - echo "Checking used ports..."
-      - lsof -i -P -n
-
   build:
     commands:
       - echo Building the server...

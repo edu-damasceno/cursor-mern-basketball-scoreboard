@@ -17,7 +17,7 @@ phases:
   pre_build:
     commands:
       - echo "Checking used ports..."
-      - netstat -tuln
+      - ss -tuln
 
   build:
     commands:

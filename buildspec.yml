@@ -3,8 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14  # Specify the Node.js version you are using
+      nodejs: 20
     commands:
+      - echo Installing root dependencies...
+      - npm install
       - echo Installing server dependencies...
       - cd server
       - npm install
@@ -12,14 +14,25 @@ phases:
       - cd ../client
       - npm install
 
+  pre_build:
+    commands:
+      - echo "Checking used ports..."
+      - netstat -tuln
+
   build:
     commands:
       - echo Building the server...
       - cd ../server
-      - npm run build  # If you have a build script for the server
+      - npm run build
       - echo Building the client...
       - cd ../client
-      - npm run build  # If you have a build script for the client
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Starting server and client concurrently...
+      - cd ../
+      - concurrently "npm run server" "npm run client"
 
 artifacts:
   files:

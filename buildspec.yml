@@ -17,7 +17,7 @@ phases:
   pre_build:
     commands:
       - echo "Checking used ports..."
-      - ss -tuln
+      - lsof -i -P -n
 
   build:
     commands:

@@ -15,12 +15,14 @@
   build:
     commands:
       - echo Building the client...
-      - cd ../
+      - cd ../client
       - npm run build
+      - ls -la
 
   post_build:
     commands:
       - echo Starting the server...
+      - cd ../
       - npm start  # Start the Node.js server
 
    artifacts:

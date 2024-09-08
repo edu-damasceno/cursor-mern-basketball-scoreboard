@@ -15,7 +15,6 @@
      build:
        commands:
          - echo "Building the client..."
-         - cd ../client
          - npm run build  # Build the React app
          - echo "Contents of the client directory after build:"
          - ls -la  # List files in the client directory to check for build output
@@ -25,7 +24,6 @@
      post_build:
        commands:
          - echo Starting the server...
-         - cd ../
          - npm start  # Start the Node.js server
 
    artifacts:

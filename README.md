@@ -12,6 +12,7 @@ This project is a basketball scoreboard application built using the MERN stack (
 
 ## Features
 - Real-time score updates using WebSockets.
+- Dashboard for managing games and teams. (SOON)
 - User authentication and authorization. (SOON)
 - Team management and statistics tracking. (SOON)
 - Responsive design for mobile and desktop users. (SOON)

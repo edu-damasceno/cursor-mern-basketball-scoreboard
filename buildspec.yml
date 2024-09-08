@@ -15,6 +15,7 @@
      build:
        commands:
          - echo "Building the client..."
+         - cd ..
          - npm run build  # Build the React app
          - echo "Contents of the client directory after build:"
          - ls -la  # List files in the client directory to check for build output

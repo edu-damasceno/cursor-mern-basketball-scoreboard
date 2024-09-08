@@ -1,32 +1,29 @@
-version: 0.2
+  version: 0.2
 
-phases:
-  install:
-    runtime-versions:
-      nodejs: 20
-    commands:
-      - echo Installing root dependencies...
-      - npm install
-      - echo Installing server dependencies...
-      - cd server
-      - npm install
-      - echo Installing client dependencies...
-      - cd ../client
-      - npm install
+  phases:
+    install:
+      runtime-versions:
+        nodejs: 20
+      commands:
+        - echo Installing dependencies...
+        - npm install
+        - cd server
+        - npm install
+        - cd ../client
+        - npm install
 
   build:
     commands:
       - echo Building the client...
-      - cd ../client
+      - cd ../
       - npm run build
 
   post_build:
     commands:
-      - echo Starting server and client concurrently...
-      - cd ../
-      - npm start
+      - echo Starting the server...
+      - npm start  # Start the Node.js server
 
-artifacts:
-  files:
-    - '**/*'
-  base-directory: client/build
+   artifacts:
+     files:
+       - '**/*'
+     base-directory: client/build

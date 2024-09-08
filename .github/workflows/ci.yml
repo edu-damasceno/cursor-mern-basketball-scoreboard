@@ -31,9 +31,3 @@ jobs:
         run: |
           cd client
           npm run build  # Build the React app
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: client/build  # Path to the build directory

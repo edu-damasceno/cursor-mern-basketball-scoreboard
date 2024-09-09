@@ -57,6 +57,7 @@ This project is a basketball scoreboard application built using the MERN stack (
    - Start the client:
    ```bash
    cd ../client
+   npm run build
    npm start
    ```
 

@@ -30,4 +30,4 @@ jobs:
       - name: Build the client
         run: |
           cd client
-          npm run build  # Build the React app
+          npm run build-client  # Build the React app

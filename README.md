@@ -1,5 +1,11 @@
 # MERN Basketball Scoreboard
 
+Dashboard
+![image](https://github.com/user-attachments/assets/329e4a97-3385-40b8-8363-4c669dab78cd)
+
+Scoreboard
+![image](https://github.com/user-attachments/assets/4edd80df-8d69-4efd-8535-6e3cdc874b0f)
+
 ## Project Overview
 This project is a basketball scoreboard application built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to track scores, manage teams, and view game statistics in real-time.
 

@@ -13,8 +13,7 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server/server.js",
     "client": "cd client && npm start",
-    "build-client": "cd client && npm run build",
-    "build": "npm run build-client",
+    "build": "cd client && npm run build-client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,0 +1,100 @@
+.scoreboard {
+    background-color: #000;
+    color: #ffff00;
+    font-family: 'Digital', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid #ffff00;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .arena-name {
+    font-size: 2em;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+  
+  .main-display {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .team-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .team-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .score {
+    font-size: 4em;
+    background-color: #000;
+    border: 2px solid #ffff00;
+    padding: 10px 20px;
+  }
+  
+  .bonus {
+    margin-top: 10px;
+  }
+  
+  .team-foul, .timeout {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .label {
+    font-size: 0.8em;
+  }
+  
+  .value {
+    font-size: 2em;
+    background-color: #000;
+    border: 2px solid #ffff00;
+    padding: 5px 10px;
+  }
+  
+  .center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .game-clock {
+    font-size: 3em;
+    background-color: #000;
+    border: 2px solid #ffff00;
+    padding: 10px 20px;
+  }
+  
+  .shot-clock {
+    font-size: 2.5em;
+    color: #ff0000;
+    margin-top: 10px;
+  }
+  
+  .period {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .player-fouls {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+  
+  /* Add styles for the player foul displays */

@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://cursor-mern-basketball-scoreboard.onrender.com",
     methods: ["GET", "POST"],
     credentials: true
   }

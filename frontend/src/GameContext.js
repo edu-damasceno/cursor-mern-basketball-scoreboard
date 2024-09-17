@@ -3,8 +3,7 @@ import io from 'socket.io-client';
 
 export const GameContext = createContext();
 
-const PORT = process.env.PORT || 8080;
-const socket = io(`http://localhost:${PORT}`, {
+const socket = io(`https://cursor-mern-basketball-scoreboard.onrender.com`, {
   withCredentials: true,
   transports: ['websocket', 'polling']
 });

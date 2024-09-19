@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GameContext } from '../GameContext';
 import './Dashboard.css';
+import { formatTime } from '../utils/timeUtils';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -53,16 +54,46 @@ function Dashboard() {
     updateShotClock(newTime);
   };
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    const tenths = Math.floor((remainingSeconds % 1) * 10);
-    return `${minutes}:${Math.floor(remainingSeconds).toString().padStart(2, '0')}.${tenths}`;
+  const handleTeamNameEdit = (team) => {
+    const currentName = gameState[`${team}Team`];
+    const newName = prompt(`Enter new name for ${team} team:`, currentName);
+    if (newName !== null && newName !== currentName) {
+      updateGameState({ [`${team}Team`]: newName });
+    }
+  };
+
+  const handleLogoUpload = (team, event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        updateGameState({ [`${team}Logo`]: e.target.result });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const TeamControl = ({ team }) => (
     <div className={`team-section ${team}`}>
-      <h2>{gameState[`${team}Team`]}</h2>
+      <div className="logo-upload">
+        <label htmlFor={`${team}-logo-upload`}>
+          {gameState[`${team}Logo`] ? (
+            <img src={gameState[`${team}Logo`]} alt={`${team} logo`} className="team-logo-preview" />
+          ) : (
+            <span>Upload Logo</span>
+          )}
+        </label>
+        <input
+          id={`${team}-logo-upload`}
+          type="file"
+          accept=".svg,.png,.jpg,.jpeg"
+          onChange={(e) => handleLogoUpload(team, e)}
+          style={{ display: 'none' }}
+        />
+      </div>
+      <h2 onClick={() => handleTeamNameEdit(team)} style={{ cursor: 'pointer' }}>
+        {gameState[`${team}Team`]}
+      </h2>
       <div className="score-buttons">
         <button onClick={() => handleScoreChange(team, 3)}>+3</button>
         <button onClick={() => handleScoreChange(team, 2)}>+2</button>

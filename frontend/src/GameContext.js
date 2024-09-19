@@ -8,9 +8,11 @@ const socket = io(`https://cursor-mern-basketball-scoreboard.onrender.com`, {
   transports: ['websocket', 'polling']
 });
 
-const initialGameState = {
-  homeTeam: 'Home',
-  awayTeam: 'Away',
+const initialState = {
+  homeTeam: 'Home Team',
+  awayTeam: 'Away Team',
+  homeLogo: null,
+  awayLogo: null,
   homeScore: 0,
   awayScore: 0,
   homeFouls: 0,
@@ -27,7 +29,7 @@ const initialGameState = {
 };
 
 export const GameProvider = ({ children }) => {
-  const [gameState, setGameState] = useState(initialGameState);
+  const [gameState, setGameState] = useState(initialState);
   const timerRef = useRef(null);
 
   const updateGameState = useCallback((updatedState) => {

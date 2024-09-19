@@ -1,24 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GameContext } from '../GameContext';
 import './Scoreboard.css';
+import { formatTime } from '../utils/timeUtils';
 
 function Scoreboard() {
   const { gameState } = useContext(GameContext);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    const tenths = Math.floor((remainingSeconds % 1) * 10);
-    return `${minutes.toString().padStart(2, '0')}:${Math.floor(remainingSeconds).toString().padStart(2, '0')}.${tenths}`;
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullScreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+        setIsFullScreen(false);
+      }
+    }
   };
 
   return (
     <div className="scoreboard">
-      <div className="arena-name">Marine Arena</div>
+      <button className="fullscreen-toggle" onClick={toggleFullScreen}>
+        {isFullScreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+      </button>
       <div className="main-display">
         <div className="team home">
-          <img src="/path-to-shark-logo.png" alt="Boston Sharks" className="team-logo" />
-          <div className="team-name">Boston Sharks</div>
+          {gameState.homeLogo ? (
+            <img src={gameState.homeLogo} alt={gameState.homeTeam} className="team-logo" />
+          ) : (
+            <div className="team-logo-placeholder">{gameState.homeTeam[0]}</div>
+          )}
+          <div className="team-name">{gameState.homeTeam}</div>
           <div className="score">{gameState.homeScore}</div>
           <div className="bonus">BONUS</div>
           <div className="team-foul">
@@ -39,8 +52,12 @@ function Scoreboard() {
           </div>
         </div>
         <div className="team away">
-          <img src="/path-to-eagle-logo.png" alt="Chicago Eagles" className="team-logo" />
-          <div className="team-name">Chicago Eagles</div>
+          {gameState.awayLogo ? (
+            <img src={gameState.awayLogo} alt={gameState.awayTeam} className="team-logo" />
+          ) : (
+            <div className="team-logo-placeholder">{gameState.awayTeam[0]}</div>
+          )}
+          <div className="team-name">{gameState.awayTeam}</div>
           <div className="score">{gameState.awayScore}</div>
           <div className="bonus">BONUS</div>
           <div className="team-foul">

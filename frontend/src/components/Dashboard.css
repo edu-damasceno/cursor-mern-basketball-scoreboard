@@ -137,3 +137,35 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+.team-section h2 {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.team-section h2:hover {
+  color: #ffff00;
+  /* or any color that fits your design */
+}
+
+.logo-upload {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.team-logo-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.logo-upload span {
+  font-size: 14px;
+  color: #666;
+}

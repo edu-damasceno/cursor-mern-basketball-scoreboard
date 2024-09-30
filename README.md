@@ -9,7 +9,7 @@ Dashboard
 ![image](https://github.com/user-attachments/assets/dd5fbfad-38d7-4447-9b58-8bb8df629cfd)
 
 Scoreboard
-![image](https://github.com/user-attachments/assets/55f1240c-d70f-40e2-a2b7-111170710864)
+![image](https://github.com/user-attachments/assets/c74673fc-ba27-4f8c-835c-bf9fbe5087d5)
 
 # Live Demo
 

@@ -6,10 +6,10 @@ This project is a basketball scoreboard application built using the MERN stack (
 * It is a work in progress so it may have some bugs.
 
 Dashboard
-![image](https://github.com/user-attachments/assets/329e4a97-3385-40b8-8363-4c669dab78cd)
+![image](https://github.com/user-attachments/assets/dd5fbfad-38d7-4447-9b58-8bb8df629cfd)
 
 Scoreboard
-![image](https://github.com/user-attachments/assets/4edd80df-8d69-4efd-8535-6e3cdc874b0f)
+![image](https://github.com/user-attachments/assets/55f1240c-d70f-40e2-a2b7-111170710864)
 
 # Live Demo
 

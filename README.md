@@ -38,7 +38,7 @@ Scoreboard
 
 ## Environments
 - **Development**: Local environment for development and testing.
-- **Production**: Deployed on AWS Elastic Beanstalk for live usage.
+- **Production**: Deployed on Render.com with a free account
 
 ## Getting Started
 ### Prerequisites

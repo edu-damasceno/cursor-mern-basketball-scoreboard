@@ -45,43 +45,35 @@ Scoreboard
 - Node.js and npm installed on your machine.
 - MongoDB instance (local or cloud).
 
-### Installation
+### Installation and Setup
+
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/mern-basketball-scoreboard.git
-   cd mern-basketball-scoreboard
+   ```
+   git clone https://github.com/edu-damasceno/cursor-mern-basketball-scoreboard.git
+   cd cursor-mern-basketball-scoreboard
    ```
 
-2. Install dependencies for the server:
-   ```bash
-   cd server
-   npm install
+2. Install dependencies and build the project:
    ```
-
-3. Install dependencies for the client:
-   ```bash
-   cd ../client
-   npm install
-   ```
-
-4. Set up environment variables:
-   - Rename the `.env.sample` file to `.env` in the root directory and add your configuration.
-
-5. Start the application:
-   - Start the server:
-   ```bash
-   cd ../server
-   npm start
-   ```
-   - Start the client:
-   ```bash
-   cd ../client
    npm run build
+   ```
+   This command will install dependencies for both the backend and frontend, and build the frontend.
+
+3. Start the backend server:
+   ```
+   npm start
+   ```
+   This will start the backend server using Node.js.
+
+4. In a new terminal, start the frontend development server:
+   ```
+   cd frontend
    npm start
    ```
 
-## WebSockets
-This application uses WebSockets for real-time score updates. The server broadcasts score changes to all connected clients, ensuring that everyone sees the latest information without needing to refresh the page.
+## Deployment
+
+This project is set up for deployment on render.com. The `build` script in the root `package.json` file is configured to install dependencies for both backend and frontend, and build the frontend. This setup allows for easy deployment of the full-stack application on platforms like render.com.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.

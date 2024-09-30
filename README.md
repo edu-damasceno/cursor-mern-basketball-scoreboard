@@ -1,4 +1,9 @@
-# MERN Basketball Scoreboard
+# MERN Basketball Scoreboard built with Cursor AI
+
+## Project Overview
+This project is a basketball scoreboard application built using the MERN stack (MongoDB, Express.js, React, Node.js) built entirely with Cursor AI. It allows users to track scores, manage teams, and view game statistics in real-time, in the future.
+
+* It is a work in progress so it may have some bugs.
 
 Dashboard
 ![image](https://github.com/user-attachments/assets/329e4a97-3385-40b8-8363-4c669dab78cd)
@@ -6,8 +11,12 @@ Dashboard
 Scoreboard
 ![image](https://github.com/user-attachments/assets/4edd80df-8d69-4efd-8535-6e3cdc874b0f)
 
-## Project Overview
-This project is a basketball scoreboard application built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to track scores, manage teams, and view game statistics in real-time.
+# Live Demo
+
+Scoreboard Control [https://cursor-mern-basketball-scoreboard.onrender.com]
+Scoreboard [https://cursor-mern-basketball-scoreboard.onrender.com/scoreboard]
+
+* Deployed at Render.com with a free account, so it may not be working sometimes.
 
 ## Technologies Used
 - **MongoDB**: NoSQL database for storing game and user data.
@@ -17,7 +26,7 @@ This project is a basketball scoreboard application built using the MERN stack (
 - **WebSockets**: For real-time communication between the server and clients.
 
 ## Features
-- Real-time score updates using WebSockets.
+- Real-time score updates in different devices using WebSockets
 - Dashboard for managing games and teams. (SOON)
 - User authentication and authorization. (SOON)
 - Team management and statistics tracking. (SOON)

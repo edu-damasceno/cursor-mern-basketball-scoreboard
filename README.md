@@ -23,7 +23,7 @@ Scoreboard
 * Deployed at Render.com with a free account, so it may not be working sometimes.
 
 ## Technologies Used
-- **MongoDB**: NoSQL database for storing game and user data.
+- **MongoDB Atlas**: Cloud-hosted MongoDB service for storing game and user data.
 - **Express.js**: Web framework for Node.js to build the backend API.
 - **React**: Frontend library for building user interfaces.
 - **Node.js**: JavaScript runtime for server-side development.
@@ -43,7 +43,7 @@ Scoreboard
 ## Getting Started
 ### Prerequisites
 - Node.js and npm installed on your machine.
-- MongoDB instance (local or cloud).
+- MongoDB Atlas account (for cloud-hosted database).
 
 ### Installation and Setup
 
@@ -82,5 +82,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 This project is licensed under the MIT License.
 
 ## Acknowledgments
+- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
 - [MERN Stack Documentation](https://www.mongodb.com/mern-stack)
 - [WebSocket Documentation](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
